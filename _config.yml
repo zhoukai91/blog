@@ -17,6 +17,7 @@ timezone:
 #url: http://yoursite.com
 #root: /blog
 url: blog.zhoukai91.com
+# 当配置了CNAME后，应该改为根路径访问
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
