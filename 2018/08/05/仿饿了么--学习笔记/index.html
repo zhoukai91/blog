@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、https://icomoon.io/   图表字体生成网站 chrome插件  jsonview格式化json数据 eslint配置 rules{       &amp;apos;semi&amp;apos;:[&amp;apos;error&amp;apos;,&amp;apos;always&amp;apos;],    //分号配置       &amp;apos;indent&amp;apos;:0                    //">
+<meta property="og:type" content="article">
+<meta property="og:title" content="仿饿了么--学习笔记">
+<meta property="og:url" content="blog.zhoukai91.com/2018/08/05/仿饿了么--学习笔记/index.html">
+<meta property="og:site_name" content="Victor_zk&#39;s Blog">
+<meta property="og:description" content="1、https://icomoon.io/   图表字体生成网站 chrome插件  jsonview格式化json数据 eslint配置 rules{       &amp;apos;semi&amp;apos;:[&amp;apos;error&amp;apos;,&amp;apos;always&amp;apos;],    //分号配置       &amp;apos;indent&amp;apos;:0                    //">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-05T01:13:49.270Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="仿饿了么--学习笔记">
+<meta name="twitter:description" content="1、https://icomoon.io/   图表字体生成网站 chrome插件  jsonview格式化json数据 eslint配置 rules{       &amp;apos;semi&amp;apos;:[&amp;apos;error&amp;apos;,&amp;apos;always&amp;apos;],    //分号配置       &amp;apos;indent&amp;apos;:0                    //">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="blog.zhoukai91.com/2018/08/05/仿饿了么--学习笔记/"/>
+
+
+
+
+
+  <title>仿饿了么--学习笔记 | Victor_zk's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Victor_zk's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-vue.js" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.zhoukai91.com/2018/08/05/仿饿了么--学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="victor_zk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Victor_zk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">仿饿了么--学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T09:13:49+08:00">
+                2018-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1、<a href="https://icomoon.io/" target="_blank" rel="noopener">https://icomoon.io/</a>   图表字体生成网站</p>
+<p>chrome插件  jsonview格式化json数据</p>
+<p>eslint配置</p>
+<pre><code>rules{
+      &apos;semi&apos;:[&apos;error&apos;,&apos;always&apos;],    //分号配置
+      &apos;indent&apos;:0                    //  缩进配置
+}
+/* eslint-disable no-new */  new实例写法前加上，可以忽视eslint检查
+</code></pre><p>重定向：<code>{path: &#39;*&#39;, redirect: &#39;/goods&#39;}</code></p>
+<p>PC端开发，手机端调试，通过草料生成二维码<a href="https://cli.im/，手机访问。必须在同个局域网下。" target="_blank" rel="noopener">https://cli.im/，手机访问。必须在同个局域网下。</a></p>
+<p>1像素borer:  :after伪类，根据DPR缩放伪类</p>
+<pre><code>.border-1px{
+  position: relative;
+  &amp;:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(7, 17, 27, 0.1);
+    content: &apos;&apos;;
+  }
+}
+
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+    .border-1px:after {
+      -webkit-transform: scaleY(0.7);
+      ransform: scaleY(0.7);
+    }
+  }
+</code></pre><p>css消除空白技巧：1、两个span之间不换行，2、设置父元素的font-size:0；</p>
+<pre><code>// 内容水平居中
+.box-container{
+  display: flex;
+  justify-cintent: center;  
+  align-item: center
+}
+
+&lt;link rel=&apos;stylesheet&apos; type=&apos;test/css&apos; href=&apos;&apos; media=&apos;screen and (max-width: 320px)&apos;&gt;
+
+&lt;script&gt;
+  let htmlWidth = document.documentElement.clentWidth || document.body.client;
+  let htmlDom = document.getElemnetByTagname(&apos;html&apos;)[0];
+  htmpDom.style.fontSize = htmlWidth / 10 +&apos;px;
+&lt;/script&gt;
+</code></pre><p>***less字符串拼接</p>
+<pre><code>.bg-img(@url) {
+  background-image: url( &apos;@{url}@2x.png&apos;);
+}
+</code></pre><p>***注意mixin中的路径，是相对于mixin文件的路径</p>
+<p>文字超出部分隐藏css代码：</p>
+<pre><code>white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+</code></pre><p>背景模糊：filter:blur(10px);</p>
+<p><strong>*</strong>CSS Sticky footers布局<br>  两中方案：</p>
+<pre><code>// 1、flex布局
+  body{min-height:100vh;  display:flex;  flex-direction:cloum;}
+  main{flex:1;}
+ // 2、CSS解决
+  main{min-height:100vh; padding-bottom:50px;}
+  footer{height:50px; margin-top:50px}
+</code></pre><p>背景图片模糊CSS：<code>filter: blur(10px);</code><br>背景模糊 IOS下： <code>backdrop-filter: blur(10px)</code></p>
+<p>垂直居中最好的方法：<code>dispaly:table   dispaly:table-cell   vertical-align:middel</code></p>
+<p>上下margin会重合</p>
+<p>img元素直接用属性width height</p>
+<p><strong><em>vue  this.$nextTick()  在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。<br>         div:ref=’targetName’   this.$refs.targetName取得DOM元素
+</em></strong> class=”xx-xx-hook”  hook仅仅表示将会被JS选择，没有和实际的样式</p>
+<p>  Vue.set(this.food, ‘count’, 1);  设置监听对象没有的属性，将会响应式更新</p>
+<p><strong>*</strong> vue2.0组件间事件派发与接收  <a href="https://segmentfault.com/a/1190000008018314" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008018314</a><br>            通过new Vue对象，专门管理事件，可以非父子组件通信</p>
+<pre><code>1、 mian.js  eventHub : new Vue()
+      组件a     this.$root.$emit(&apos;eName&apos;,)
+      组件b     this.$root.$on(&apos;eName&apos;, () =&gt; {});
+
+2、 父子组件通信，使用自定义事件, 子组件通过this.$emit出发事件， 在父组件的子组件元素中，通过@自定义事件名  接受事件
+      子组件a     @click=&apos;addCart&apos;    methods: {addCart(event){ this.$emit(&apos;add&apos;, event.target) } }
+    父组件b    &lt;a @add=&apos;addFood&apos;&gt;&lt;/a&gt;   methods: { addFood(){ ... } }
+
+3、 使用Vuex
+</code></pre><p><code>el.getBoundingClentRect();</code> 获得元素距离视口的坐标</p>
+<p><strong>*</strong> vue 使用JS钩子函数实现过渡效果</p>
+<pre><code>beforeDrop(el) {
+        // 从后往前判断，新运动小球是PUSH
+        let count = this.balls.length;
+        while (count--) {
+          let ball = this.balls[count];
+          if (ball.show) {
+            // 获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
+            let rect = ball.el.getBoundingClientRect();
+            // 小球初始 left:32  bottom:22
+            let x = rect.left - 32;
+            let y = -(window.innerHeight - rect.top - 22);
+            el.style.display = &apos;&apos;;
+            el.style.webkitTransform = `translate3d(0,${y}px,0)`;
+            el.style.transform = `translate3d(0,${y}px,0)`;
+            let inner = el.getElementsByClassName(&apos;inner-hook&apos;)[0];
+            inner.style.webkitTransform = `translate3d(${x}px,0,0)`;
+            inner.style.transform = `translate3d(${x}px,0,0)`;
+          }
+        }
+      },
+      dropping(el, done) {
+        // 手动触发浏览器重绘
+        /* eslint-disable no-unused-vars */
+        let rf = el.offsetHeight;  //触发重绘html
+        this.$nextTick(() =&gt; {
+          // 重置偏移位置，即左下角
+          el.style.webkitTransform = &apos;translate3d(0,0,0)&apos;;
+          el.style.transform = &apos;translate3d(0,0,0)&apos;;
+          let inner = el.getElementsByClassName(&apos;inner-hook&apos;)[0];
+          inner.style.webkitTransform = &apos;translate3d(0,0,0)&apos;;
+          inner.style.transform = &apos;translate3d(0,0,0)&apos;;
+          // 等待过渡效果执行完毕， 触发动画完成事件afterDrop, 缺失将无法实现小球消失
+          el.addEventListener(&apos;transitionend&apos;, done);
+        });
+      },
+      afterDrop(el) {
+        console.log(&apos;---&apos;);
+        let ball = this.drops.shift();
+        if (ball) {
+          ball.show = false;
+          el.style.display = &apos;none&apos;;
+        }
+      }
+</code></pre><p>*** CSS高度自适应图片技巧（图片加载时，在view中预留位置）</p>
+<pre><code>.img-wrapper{
+  position: raletive;
+  width:100;
+  hieght:0;
+  padding-top:100%  //技巧，当没有设置高度时，padding值相对与宽度进行计算
+}
+img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  hieght: 100%;
+}
+
+
+&lt;a href=&apos;javascript:;&apos;&gt;&lt;/a&gt;  阻止链接的默认行为，防止页面调转
+</code></pre><p><em>**</em> $httmp.get(‘./package.json’,{}).then()  可以直接获得package.json的内容，即读取本地json的数据</p>
+<pre><code>vue-resourse使用技巧：
+   拦截器Vue.http.interscptors.push( function(request,next){....});
+   vue实例下面有个http方法,resourse插件做的封装
+   http:{
+    root: &apos;全局地址&apos;
+   }
+
+axios
+  失败的请求通过catch捕获
+  全局拦截器
+     axios.interscptors.request.use(function(config){
+       console.log(&apos;request init...&apos;)
+       return config;
+     })
+     axios.interscptors.response.use(function(response){
+        console.log(&apos;response init...&apos;)
+        return response;
+      })
+</code></pre><p>*** AMD、CMD、CommonJS和ES6差异<br>AMD、CMD、CommonJS 是模块化开发的标准和方案</p>
+<blockquote>
+<p>   1、AMD(异步模块定义)是RequireJS在推广过程中对模块化定义的规范化产出， 依赖前置<br>   2、CMD(同步模块定义)是SeaJS(淘宝团队)在推广过程中对模块化定义的规范化产出， 用即返回<br>   3、CommonJS规范–module.exports  node端推荐使用<br>   4、ES6特性 export/import</p>
+</blockquote>
+<p>  vue组件中的data是一个函数，通过 return {…}。  目的：组件的数据不应该时贡献的，通过函数返回，可以保证每次引用组件时的data数据对象不是一个。</p>
+<p>  通过import 可以在组件的script标签内直接导入样式 。 import ‘../style/myStyle.less’</p>
+<p>webpack 代理设置： conig/index.js 中，设置</p>
+<pre><code>dev:{ proxyTable: { &apos;/goods/*&apos;: { target: &apos;targetUrl:port&apos; } } }
+</code></pre><p>通过代理，可以解决跨域问题</p>
+<p> 匿名函数,定时器中的函数,由于没有默认的宿主对象,所以默认this指向window<br>    <script><br>      var obj = {<br>        func: function() {},<br>        say: function () {<br>           // 此时的this就是obj对象<br>          setTimeout(function () {<br>        console.log(this)<br>        this.func()<br>          }.bind(this));<br>        }<br>      }<br>      obj.say(); // obj<br>    </script><br>    箭头函数没有自己的this, 它的this是继承而来; 默认指向在定义它时所处的对象(宿主对象),而不是执行时的对象, 定义它的时候,可能环境是window; 箭头函数可以方便地让我们在 setTimeout ,setInterval中方便的使用this</p>
+<p><em>**</em> webpack深入与实战<br> 在页面中想使用自定义的插件： 定义一个 新的类，使用 let Toast = Vue.extend(ToastComponent)进行继承,</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/05/Vue的Watcher分类/" rel="next" title="Vue中Watcher的分类">
+                <i class="fa fa-chevron-left"></i> Vue中Watcher的分类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/05/前端模块化/" rel="prev" title="AMD、CMD、CommonJS和ES6">
+                AMD、CMD、CommonJS和ES6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">victor_zk</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">victor_zk</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
