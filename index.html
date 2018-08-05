@@ -95,7 +95,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -142,7 +142,9 @@
 
   <div class="container sidebar-position-left 
   page-home">
-    <div class="headband"></div>
+    <div class="headband">
+      <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a> 
+    </div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -198,9 +200,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -224,12 +260,12 @@
   
   
 
-  <article class="post post-type-前端模块化" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-vue" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.zhoukai91.com/2018/08/05/前端模块化/">
+    <link itemprop="mainEntityOfPage" href="blog.zhoukai91.com/2018/05/06/Vue的Watcher分类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="victor_zk">
@@ -248,7 +284,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/05/前端模块化/" itemprop="url">AMD、CMD、CommonJS和ES6</a></h1>
+                <a class="post-title-link" href="/2018/05/06/Vue的Watcher分类/" itemprop="url">Vue中Watcher的分类</a></h1>
         
 
         <div class="post-meta">
@@ -260,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T09:13:49+08:00">
-                2018-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T00:00:00+08:00">
+                2018-05-06
               </time>
             
 
@@ -271,6 +307,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -281,6 +339,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
           
 
           
@@ -300,59 +389,17 @@
       
         
           
-            <h1 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h1><p>对前端的模块化进行简单介绍，主要介绍CommonJS模块 和 ES6模块的区别</p>
-<h2 id="1、ES6模块"><a href="#1、ES6模块" class="headerlink" title="1、ES6模块"></a>1、ES6模块</h2><p>ES6 模块的设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。</p>
-<p><strong>1.1 CommonJs模块运行时加载(对象)，ES6模块编译时输出接口</strong></p>
-<p>引用<a href="http://es6.ruanyifeng.com/#docs/module-loader" target="_blank" rel="noopener">阮一峰老师的例子</a>来进行说明：</p>
-<p>CommonJS的输出缓存机制，使得模块被加载时，会被缓存起来,将整个模块当作一个对象输出。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CommonJS模块</span></span><br><span class="line"><span class="keyword">let</span> &#123; stat, exists, readFile &#125; = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">let</span> _fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">let</span> stat = _fs.stat;</span><br><span class="line"><span class="keyword">let</span> exists = _fs.exists;</span><br><span class="line"><span class="keyword">let</span> readfile = _fs.readfile;</span><br></pre></td></tr></table></figure></p>
-<p>上面代码的实质是整体加载fs模块（即加载fs的所有方法），生成一个对象（_fs），然后再从这个对象上面读取 3 个方法。这种加载称为“运行时加载”，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。<br>并且，由于缓存机制，重复加载同一模块，都只会在第一次加载时运行一次，以后再加载，就返回第一次运行的结果，除非手动清除系统缓存。</p>
-<p>ES6 模块不是对象，而是通过export命令显式指定输出的代码，再通过import命令输入。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6模块</span></span><br><span class="line"><span class="keyword">import</span> &#123; stat, exists, readFile &#125; <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br></pre></td></tr></table></figure></p>
-<p>上面代码的实质是从fs模块加载3个方法，其他方法不加载。这种加载称为“编译时加载”或者静态加载，即 ES6 可以在编译时就完成模块加载，效率要比CommonJS模块的加载方式高。当然，这也导致了没法引用 ES6 模块本身，因为它不是对象。</p>
-<p><strong>1.2 CommonJs 模块输出的是一个值的复制，ES6模块编译时输出接口（动态只读引用）</strong><br>CommonJs 模块：<br>对于基本数据类型，属于复制。即会被模块缓存。同时，在另一个模块可以对该模块输出的变量重新赋值，而不会影响其他模块。<br>对于复杂数据类型，属于浅拷贝。由于两个模块引用的对象指向同一个内存空间，因此对该模块的值做修改时会影响另一个模块。<br>ES6 模块：<br>ES6 模块的运行机制与 CommonJS不一样。JS引擎对脚本静态分析的时候，遇到模块加载命令import，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。</p>
-<p><strong>1.3 对于循环引用的处理</strong><br>CommonJS 模块：<br>其重要特性是加载时执行，即脚本代码在require的时候，就会全部执行。一旦出现某个模块被”循环加载”，就只输出已经执行的部分，还未执行的部分不会输出。<br>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a start'</span>);</span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">require</span>(<span class="string">'./b.js'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a doing'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line">exports.a = <span class="string">'a模块的变量'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// b.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'b start'</span>);</span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'./b'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'b doing'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">exports.b = <span class="string">'b模块的变量'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 要理解CommonJS模块是同步执行</span></span><br><span class="line"><span class="comment">// 当执行 node a.js时，输出为：</span></span><br><span class="line"><span class="comment">// a start</span></span><br><span class="line"><span class="comment">// b start</span></span><br><span class="line"><span class="comment">// b doing</span></span><br><span class="line"><span class="comment">// &#123;&#125;</span></span><br><span class="line"><span class="comment">// a doing</span></span><br><span class="line"><span class="comment">// &#123;b: 'b模块的变量'&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>ES6 模块：<br>ES6 模块是动态引用，如果使用import从一个模块加载变量，那些变量不会被缓存，而是成为一个指向被加载模块的引用，需要开发者自己保证，真正取值的时候能够取到值。<br>上面例子的ES6改写：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ node –experimental-modules a.mjs</span><br><span class="line"></span><br><span class="line">  <span class="comment">// a.js</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a start'</span>);</span><br><span class="line">    <span class="keyword">import</span> &#123;b&#125; <span class="keyword">from</span> ./b.mjs<span class="string">';</span></span><br><span class="line"><span class="string">    console.log('</span>a doing<span class="string">');</span></span><br><span class="line"><span class="string">    console.log(b);</span></span><br><span class="line"><span class="string">    exports.a = '</span>a模块的变量<span class="string">';</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // b.js</span></span><br><span class="line"><span class="string">    console.log('</span>b start<span class="string">');</span></span><br><span class="line"><span class="string">    import &#123;a&#125; from ./a.mjs'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b doing'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    exports.b = <span class="string">'b模块的变量'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出</span></span><br><span class="line">    <span class="comment">// b start</span></span><br><span class="line">    <span class="comment">// b ding</span></span><br><span class="line">    <span class="comment">// ReferenceError: a is not defined</span></span><br></pre></td></tr></table></figure></p>
-<p>分析：执行a.mjs以后，引擎发现它加载了b.mjs，因此会优先执行b.mjs，然后再执行a.mjs。接着，执行b.mjs的时候，已知它从a.mjs输入了foo接口，这时不会去执行a.mjs，而是认为这个接口已经存在了，继续往下执行。执行到第三行console.log(foo)的时候，才发现这个接口根本没定义，因此报错。</p>
-<p>解决方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js</span></span><br><span class="line"><span class="comment">// exports.a = 'a模块的变量'; 改为</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">a</span> (<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="string">'a模块的函数'</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// b.js</span></span><br><span class="line"><span class="comment">// exports.b = 'b模块的变量';</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">b</span> (<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="string">'b模块的函数'</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="comment">// b start</span></span><br><span class="line"><span class="comment">// b ding</span></span><br><span class="line"><span class="comment">// [Function: a]</span></span><br><span class="line"><span class="comment">// a start</span></span><br><span class="line"><span class="comment">// b doing</span></span><br><span class="line"><span class="comment">// [Funcion: b]</span></span><br></pre></td></tr></table></figure></p>
-<p>分析：function a(){…}具有提升作用。因此，在import之前，已经存在函数a。</p>
-<p>下面简单介绍前端的其它模块化规范。</p>
-<h2 id="2、CommonJS规范"><a href="#2、CommonJS规范" class="headerlink" title="2、CommonJS规范"></a>2、CommonJS规范</h2><p>1、核心思想：</p>
-<blockquote>
-<p>把一个文件当做一个模块，通过require方法同步加载模块。</p>
-</blockquote>
-<p>2、应用场景</p>
-<blockquote>
-<p>Node.js的服务端编程加载的模块主要存在于服务器磁盘，所以加载速度较快，对node这种单线程，影响较小。因此，CommonJS同步加载模块方案主要应用于<strong>node</strong>服务端。</p>
-</blockquote>
-<p>3、不适用于浏览器环境</p>
-<blockquote>
-<p>浏览器加载方式与服务端完全不同。如果浏览器请求服务器资源时，会由于某个请求加载的时间过长导致浏览器阻塞，不会往下执行，所以就会出现网页打开缓慢的现象。并且，浏览器端是以插入&lt;script&gt;标签的形式来加载资源（ajax方式不行，有跨域问题），没办法让代码同步执行，使用commonJS同步写法会直接报错。</p>
-</blockquote>
-<p>4、示例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.js</span></span><br><span class="line"><span class="built_in">module</span>.export = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">"你好"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'./a.js'</span>);</span><br><span class="line">a.say();</span><br></pre></td></tr></table></figure>
-<p>浏览器环境下必须采用异步模式。所以就有了ES6模块、 AMD，CMD 解决方案。</p>
-<h2 id="3、AMD规范"><a href="#3、AMD规范" class="headerlink" title="3、AMD规范"></a>3、AMD规范</h2><p>AMD(异步模块定义)是RequireJS在推广过程中对模块化定义的规范化产出。</p>
-<p>1、核心思想：</p>
-<blockquote>
-<p>异步加载所需的模块，然后在回调函数中执行主逻辑。</p>
-</blockquote>
-<p><strong>可以并行加载多个模块，等所有模块都加载并且解释执行完成后</strong>，才会执行接下来的代码，</p>
-<p>2、吐槽点</p>
-<blockquote>
-<p>“提前执行”：所有依赖模块会被预先下载，并且提前执行（不管该模块的调用时机）。“提前执行”的性能消耗是不容忽视。</p>
-</blockquote>
-<p>3、懒加载</p>
-<blockquote>
-<p>AMD保留了commonjs中的require、exprots、module这三个功能。因此，为了解决“提前执行”的性能消耗，依赖的模块不写在dependencies数组中，</p>
-</blockquote>
-<p>4、示例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">return</span> &#123;</span><br><span class="line">          say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'hello, a.js'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// b.js</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">return</span> &#123;</span><br><span class="line">          say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'hello, a.js'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="built_in">require</span>([<span class="string">'a'</span>, <span class="string">'b'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">     a.say();</span><br><span class="line">     $(<span class="string">'#b'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          b.say();</span><br><span class="line">     &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// AMD懒加载方式</span></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="built_in">require</span>([<span class="string">'a'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">     a.say();</span><br><span class="line">     $(<span class="string">'#b'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="built_in">require</span>([<span class="string">'b'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">b</span>)</span>&#123;</span><br><span class="line">               b.say();</span><br><span class="line">          &#125;);</span><br><span class="line">     &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>这种懒加载减轻了初始化操作。<strong>但是，在需要执行b.say()时，需要实时下载代码然后在回调中才能执行，用户的操作会有明显的延迟卡顿。</strong></p>
-<h2 id="4、CMD规范"><a href="#4、CMD规范" class="headerlink" title="4、CMD规范"></a>4、CMD规范</h2><p>CMD(同步模块定义)是SeaJS(淘宝团队)在推广过程中对模块化定义的规范化产。</p>
-<p>1、示例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">return</span> &#123;</span><br><span class="line">          say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'hello, a.js'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// b.js</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">return</span> &#123;</span><br><span class="line">          say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'hello, b.js'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'a'</span>);</span><br><span class="line">     a.say();</span><br><span class="line">     $(<span class="string">'#b'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'b'</span>);</span><br><span class="line">               b.say();</span><br><span class="line">          &#125;);</span><br><span class="line">     &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>a.js和b.js都会预先下载，但是，<strong>b.js不会预先执行（即用即返回）。</strong></p>
-
-          
+          刚刚看了一篇关于介绍Watcher的文章，让我茅塞顿开。在此记录下自己对Watcher的理解。
+Watcher分类内部-watchervue组件上的每一条数据绑定指令(例如)和computed属性，通过compile最后都会生成一个对应的 watcher 对象。
+user–watcher 在watc
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/06/Vue的Watcher分类/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -361,6 +408,10 @@
     
 
     
+
+    <div>
+      
+    </div>
 
     
 
@@ -399,7 +450,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.zhoukai91.com/2018/08/05/仿饿了么--学习笔记/">
+    <link itemprop="mainEntityOfPage" href="blog.zhoukai91.com/2018/04/11/仿饿了么--学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="victor_zk">
@@ -418,7 +469,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/05/仿饿了么--学习笔记/" itemprop="url">仿饿了么--学习笔记</a></h1>
+                <a class="post-title-link" href="/2018/04/11/仿饿了么--学习笔记/" itemprop="url">仿饿了么--学习笔记</a></h1>
         
 
         <div class="post-meta">
@@ -430,8 +481,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T09:13:49+08:00">
-                2018-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T00:00:00+08:00">
+                2018-04-11
               </time>
             
 
@@ -441,6 +492,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -451,6 +524,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
           
 
           
@@ -470,179 +574,20 @@
       
         
           
-            <p>1、<a href="https://icomoon.io/" target="_blank" rel="noopener">https://icomoon.io/</a>   图表字体生成网站</p>
-<p>chrome插件  jsonview格式化json数据</p>
-<p>eslint配置</p>
-<pre><code>rules{
+          1、https://icomoon.io/   图表字体生成网站
+chrome插件  jsonview格式化json数据
+eslint配置
+rules{
       &apos;semi&apos;:[&apos;error&apos;,&apos;always&apos;],    //分号配置
-      &apos;indent&apos;:0                    //  缩进配置
-}
-/* eslint-disable no-new */  new实例写法前加上，可以忽视eslint检查
-</code></pre><p>重定向：<code>{path: &#39;*&#39;, redirect: &#39;/goods&#39;}</code></p>
-<p>PC端开发，手机端调试，通过草料生成二维码<a href="https://cli.im/，手机访问。必须在同个局域网下。" target="_blank" rel="noopener">https://cli.im/，手机访问。必须在同个局域网下。</a></p>
-<p>1像素borer:  :after伪类，根据DPR缩放伪类</p>
-<pre><code>.border-1px{
-  position: relative;
-  &amp;:after {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid rgba(7, 17, 27, 0.1);
-    content: &apos;&apos;;
-  }
-}
 
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
-    .border-1px:after {
-      -webkit-transform: scaleY(0.7);
-      ransform: scaleY(0.7);
-    }
-  }
-</code></pre><p>css消除空白技巧：1、两个span之间不换行，2、设置父元素的font-size:0；</p>
-<pre><code>// 内容水平居中
-.box-container{
-  display: flex;
-  justify-cintent: center;  
-  align-item: center
-}
-
-&lt;link rel=&apos;stylesheet&apos; type=&apos;test/css&apos; href=&apos;&apos; media=&apos;screen and (max-width: 320px)&apos;&gt;
-
-&lt;script&gt;
-  let htmlWidth = document.documentElement.clentWidth || document.body.client;
-  let htmlDom = document.getElemnetByTagname(&apos;html&apos;)[0];
-  htmpDom.style.fontSize = htmlWidth / 10 +&apos;px;
-&lt;/script&gt;
-</code></pre><p>***less字符串拼接</p>
-<pre><code>.bg-img(@url) {
-  background-image: url( &apos;@{url}@2x.png&apos;);
-}
-</code></pre><p>***注意mixin中的路径，是相对于mixin文件的路径</p>
-<p>文字超出部分隐藏css代码：</p>
-<pre><code>white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-</code></pre><p>背景模糊：filter:blur(10px);</p>
-<p><strong>*</strong>CSS Sticky footers布局<br>  两中方案：</p>
-<pre><code>// 1、flex布局
-  body{min-height:100vh;  display:flex;  flex-direction:cloum;}
-  main{flex:1;}
- // 2、CSS解决
-  main{min-height:100vh; padding-bottom:50px;}
-  footer{height:50px; margin-top:50px}
-</code></pre><p>背景图片模糊CSS：<code>filter: blur(10px);</code><br>背景模糊 IOS下： <code>backdrop-filter: blur(10px)</code></p>
-<p>垂直居中最好的方法：<code>dispaly:table   dispaly:table-cell   vertical-align:middel</code></p>
-<p>上下margin会重合</p>
-<p>img元素直接用属性width height</p>
-<p><strong><em>vue  this.$nextTick()  在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。<br>         div:ref=’targetName’   this.$refs.targetName取得DOM元素
-</em></strong> class=”xx-xx-hook”  hook仅仅表示将会被JS选择，没有和实际的样式</p>
-<p>  Vue.set(this.food, ‘count’, 1);  设置监听对象没有的属性，将会响应式更新</p>
-<p><strong>*</strong> vue2.0组件间事件派发与接收  <a href="https://segmentfault.com/a/1190000008018314" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008018314</a><br>            通过new Vue对象，专门管理事件，可以非父子组件通信</p>
-<pre><code>1、 mian.js  eventHub : new Vue()
-      组件a     this.$root.$emit(&apos;eName&apos;,)
-      组件b     this.$root.$on(&apos;eName&apos;, () =&gt; {});
-
-2、 父子组件通信，使用自定义事件, 子组件通过this.$emit出发事件， 在父组件的子组件元素中，通过@自定义事件名  接受事件
-      子组件a     @click=&apos;addCart&apos;    methods: {addCart(event){ this.$emit(&apos;add&apos;, event.target) } }
-    父组件b    &lt;a @add=&apos;addFood&apos;&gt;&lt;/a&gt;   methods: { addFood(){ ... } }
-
-3、 使用Vuex
-</code></pre><p><code>el.getBoundingClentRect();</code> 获得元素距离视口的坐标</p>
-<p><strong>*</strong> vue 使用JS钩子函数实现过渡效果</p>
-<pre><code>beforeDrop(el) {
-        // 从后往前判断，新运动小球是PUSH
-        let count = this.balls.length;
-        while (count--) {
-          let ball = this.balls[count];
-          if (ball.show) {
-            // 获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
-            let rect = ball.el.getBoundingClientRect();
-            // 小球初始 left:32  bottom:22
-            let x = rect.left - 32;
-            let y = -(window.innerHeight - rect.top - 22);
-            el.style.display = &apos;&apos;;
-            el.style.webkitTransform = `translate3d(0,${y}px,0)`;
-            el.style.transform = `translate3d(0,${y}px,0)`;
-            let inner = el.getElementsByClassName(&apos;inner-hook&apos;)[0];
-            inner.style.webkitTransform = `translate3d(${x}px,0,0)`;
-            inner.style.transform = `translate3d(${x}px,0,0)`;
-          }
-        }
-      },
-      dropping(el, done) {
-        // 手动触发浏览器重绘
-        /* eslint-disable no-unused-vars */
-        let rf = el.offsetHeight;  //触发重绘html
-        this.$nextTick(() =&gt; {
-          // 重置偏移位置，即左下角
-          el.style.webkitTransform = &apos;translate3d(0,0,0)&apos;;
-          el.style.transform = &apos;translate3d(0,0,0)&apos;;
-          let inner = el.getElementsByClassName(&apos;inner-hook&apos;)[0];
-          inner.style.webkitTransform = &apos;translate3d(0,0,0)&apos;;
-          inner.style.transform = &apos;translate3d(0,0,0)&apos;;
-          // 等待过渡效果执行完毕， 触发动画完成事件afterDrop, 缺失将无法实现小球消失
-          el.addEventListener(&apos;transitionend&apos;, done);
-        });
-      },
-      afterDrop(el) {
-        console.log(&apos;---&apos;);
-        let ball = this.drops.shift();
-        if (ball) {
-          ball.show = false;
-          el.style.display = &apos;none&apos;;
-        }
-      }
-</code></pre><p>*** CSS高度自适应图片技巧（图片加载时，在view中预留位置）</p>
-<pre><code>.img-wrapper{
-  position: raletive;
-  width:100;
-  hieght:0;
-  padding-top:100%  //技巧，当没有设置高度时，padding值相对与宽度进行计算
-}
-img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  hieght: 100%;
-}
-
-
-&lt;a href=&apos;javascript:;&apos;&gt;&lt;/a&gt;  阻止链接的默认行为，防止页面调转
-</code></pre><p><em>**</em> $httmp.get(‘./package.json’,{}).then()  可以直接获得package.json的内容，即读取本地json的数据</p>
-<pre><code>vue-resourse使用技巧：
-   拦截器Vue.http.interscptors.push( function(request,next){....});
-   vue实例下面有个http方法,resourse插件做的封装
-   http:{
-    root: &apos;全局地址&apos;
-   }
-
-axios
-  失败的请求通过catch捕获
-  全局拦截器
-     axios.interscptors.request.use(function(config){
-       console.log(&apos;request init...&apos;)
-       return config;
-     })
-     axios.interscptors.response.use(function(response){
-        console.log(&apos;response init...&apos;)
-        return response;
-      })
-</code></pre><p>*** AMD、CMD、CommonJS和ES6差异<br>AMD、CMD、CommonJS 是模块化开发的标准和方案</p>
-<blockquote>
-<p>   1、AMD(异步模块定义)是RequireJS在推广过程中对模块化定义的规范化产出， 依赖前置<br>   2、CMD(同步模块定义)是SeaJS(淘宝团队)在推广过程中对模块化定义的规范化产出， 用即返回<br>   3、CommonJS规范–module.exports  node端推荐使用<br>   4、ES6特性 export/import</p>
-</blockquote>
-<p>  vue组件中的data是一个函数，通过 return {…}。  目的：组件的数据不应该时贡献的，通过函数返回，可以保证每次引用组件时的data数据对象不是一个。</p>
-<p>  通过import 可以在组件的script标签内直接导入样式 。 import ‘../style/myStyle.less’</p>
-<p>webpack 代理设置： conig/index.js 中，设置</p>
-<pre><code>dev:{ proxyTable: { &apos;/goods/*&apos;: { target: &apos;targetUrl:port&apos; } } }
-</code></pre><p>通过代理，可以解决跨域问题</p>
-<p> 匿名函数,定时器中的函数,由于没有默认的宿主对象,所以默认this指向window<br>    <script><br>      var obj = {<br>        func: function() {},<br>        say: function () {<br>           // 此时的this就是obj对象<br>          setTimeout(function () {<br>        console.log(this)<br>        this.func()<br>          }.bind(this));<br>        }<br>      }<br>      obj.say(); // obj<br>    </script><br>    箭头函数没有自己的this, 它的this是继承而来; 默认指向在定义它时所处的对象(宿主对象),而不是执行时的对象, 定义它的时候,可能环境是window; 箭头函数可以方便地让我们在 setTimeout ,setInterval中方便的使用this</p>
-<p><em>**</em> webpack深入与实战<br> 在页面中想使用自定义的插件： 定义一个 新的类，使用 let Toast = Vue.extend(ToastComponent)进行继承,</p>
-
-          
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/11/仿饿了么--学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -651,6 +596,10 @@ axios
     
 
     
+
+    <div>
+      
+    </div>
 
     
 
@@ -684,12 +633,12 @@ axios
   
   
 
-  <article class="post post-type-vue" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-前端模块化" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.zhoukai91.com/2018/08/05/Vue的Watcher分类/">
+    <link itemprop="mainEntityOfPage" href="blog.zhoukai91.com/2018/03/11/前端模块化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="victor_zk">
@@ -708,7 +657,7 @@ axios
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/05/Vue的Watcher分类/" itemprop="url">Vue中Watcher的分类</a></h1>
+                <a class="post-title-link" href="/2018/03/11/前端模块化/" itemprop="url">AMD、CMD、CommonJS和ES6</a></h1>
         
 
         <div class="post-meta">
@@ -720,8 +669,8 @@ axios
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T09:13:49+08:00">
-                2018-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T00:00:00+08:00">
+                2018-03-11
               </time>
             
 
@@ -731,6 +680,28 @@ axios
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -741,6 +712,37 @@ axios
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
           
 
           
@@ -760,18 +762,18 @@ axios
       
         
           
-            <p>刚刚看了一篇关于介绍Watcher的文章，让我茅塞顿开。在此记录下自己对Watcher的理解。</p>
-<h2 id="Watcher分类"><a href="#Watcher分类" class="headerlink" title="Watcher分类"></a>Watcher分类</h2><p><strong>内部-watcher</strong><br>vue组件上的每一条数据绑定指令(例如<code></code>)和computed属性，通过compile最后都会生成一个对应的 watcher 对象。</p>
-<p><strong>user–watcher</strong><br> 在watch属性中，由用户自己定义的，都属于这种类型，即只要监听的属性改变了，都会触发定义好的回调函数</p>
-<p><strong>render-watcher</strong><br>每一个组件都会有一个 render-watcher, <code>function () {vm._update(vm._render(), hydrating);}</code>, 当 data/computed中的属性改变的时候，会调用该 render-watcher 来更新组件的视图</p>
-<p><strong>三种 watcher 的执行顺序</strong><br>watcher 也有固定的执行顺序，分别是:</p>
-<blockquote>
-<p>内部-watcher -&gt; user-watcher -&gt; render-watcher</p>
-</blockquote>
-<p>优先执行内部watcher是为了保证指令和DOM节点的优先更新，这样当用户自定义的Wathcer的回调函数触发时DOM已经更新完毕。</p>
-<p>ps：Vue里面的概念真是太多了，让我们这些初学者情何以堪！<br>心得：多多吸收知识，当杂乱的知识点多了以后，也许一个简单的Tip，就是一次知识的升华！ “^_^”</p>
-
-          
+          前端模块化对前端的模块化进行简单介绍，主要介绍CommonJS模块 和 ES6模块的区别
+1、ES6模块ES6 模块的设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。
+1.1 CommonJs模块运行时加载(对象)，ES6模块编译时输出接口
+引用阮一峰老师的例子来进行
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/11/前端模块化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -780,6 +782,10 @@ axios
     
 
     
+
+    <div>
+      
+    </div>
 
     
 
@@ -858,13 +864,47 @@ axios
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhoukai91" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="zhoukai8887@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -899,19 +939,26 @@ axios
   <span class="author" itemprop="copyrightHolder">victor_zk</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
 </div>
 
+<!-- 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
 
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
+-->
 
 
 
@@ -957,6 +1004,8 @@ axios
   
 
 
+  
+
 
 
 
@@ -995,6 +1044,11 @@ axios
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -1054,6 +1108,323 @@ axios
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -1073,5 +1444,7 @@ axios
 
   
 
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
 </body>
 </html>
