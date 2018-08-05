@@ -86,3 +86,9 @@ deploy:
   type: git
   repo: https://github.com/zhoukai91/blog.git
   branch: gh-pages
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000

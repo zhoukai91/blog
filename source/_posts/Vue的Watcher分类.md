@@ -1,6 +1,9 @@
 ---
 title: Vue中Watcher的分类
 type: "vue"
+date: 2018-05-06
+categories: vue
+tags: vue
 ---
 
 刚刚看了一篇关于介绍Watcher的文章，让我茅塞顿开。在此记录下自己对Watcher的理解。
